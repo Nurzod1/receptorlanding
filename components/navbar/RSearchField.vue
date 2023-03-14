@@ -124,8 +124,20 @@ export default {
   &.flexible {
     max-width: 56px;
 
+    @include breakpoint (lg) {
+      max-width: 46px;
+    }
+
     .search__input {
       padding: 16px 20px 16px 26px;
+
+      @include breakpoint(lg) {
+        padding: 10px 20px 10px 26px;
+      }
+
+      @media screen and (max-width: 420px) {
+        padding: 5px 15px 5px 5px;
+      }
     }
 
     .search-icon-wrapper {
@@ -183,6 +195,14 @@ export default {
       &::placeholder {
         color: $gray-350;
       }
+
+      @include breakpoint(lg) {
+        padding: 10px 20px 10px 50px;
+      }
+
+      @media screen and (max-width: 420px) {
+        padding: 5px 15px 5px 45px;
+      }
     }
 
     &-icon-wrapper {
@@ -195,6 +215,11 @@ export default {
       transform: translateY(-50%);
       transition: 0.3s;
       pointer-events: none;
+
+      @include breakpoint(lg) {
+        width: 20px;
+        height: 20px;
+      }
 
     }
 

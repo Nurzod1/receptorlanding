@@ -49,11 +49,38 @@ export default {
     gap: 16px;
     margin-top: 80px;
 
+
+    @include breakpoint(xs) {
+      gap: 10px;
+    }
+
     &__title {
       font-family: Bitter;
       font-size: 36px;
       line-height: 130%;
+      font-weight: 500;
       max-width: 781px;
+
+      @include breakpoint(lg) {
+        font-size: 32px;
+      }
+
+
+      @include breakpoint(md) {
+        font-size: 28px;
+      }
+
+      @include breakpoint(sm) {
+        font-size: 22px;
+      }
+
+      @include breakpoint(xs) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 400px) {
+        font-size: 18px;
+      }
     }
 
     &__subtitle {
@@ -61,6 +88,29 @@ export default {
       line-height: 130%;
       max-width: 515px;
       margin-bottom: 8px;
+
+      @include breakpoint(lg) {
+        font-size: 22px;
+      }
+
+      @include breakpoint(md) {
+        font-size: 20px;
+        max-width: 450px;
+      }
+
+      @include breakpoint(sm) {
+        font-size: 18px;
+        max-width: 400px;
+      }
+
+      @include breakpoint(xs) {
+        font-size: 16px;
+        max-width: 380px;
+      }
+
+      @media screen and (max-width: 400px) {
+        font-size: 14px;
+      }
     }
 
     &__btn {

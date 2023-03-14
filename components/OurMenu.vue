@@ -62,7 +62,7 @@
               </div>
             </div>
           </div>
-          <g-button class="white" text="ПОДОБРАТЬ МЕНЮ"/>
+          <g-button class="white" text="ПОДОБРАТЬ МЕНЮ" />
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import GButton from './GButton.vue';
+import GButton from "./GButton.vue";
 export default {
   components: { GButton },
   name: "OurMenu",
@@ -103,12 +103,37 @@ export default {
       height: 1px;
       border-bottom: 2px solid $white;
       margin-bottom: 65px;
+
+      @include breakpoint(md) {
+        margin-bottom: 40px;
+      }
+
+      @include breakpoint(sm) {
+        margin-bottom: 30px;
+        width: 125px;
+      }
     }
 
     &__title {
       font-family: Bitter;
       font-size: 36px;
       line-height: 130%;
+
+      @include breakpoint(lg) {
+        font-size: 32px;
+      }
+
+      @include breakpoint(md) {
+        font-size: 30px;
+      }
+
+      @include breakpoint(sm) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width:340px) {
+        font-size: 22px;
+      }
     }
   }
 
@@ -122,10 +147,35 @@ export default {
       justify-content: center;
       margin-bottom: 32px;
 
+      @include breakpoint(lg) {
+        gap: 150px;
+      }
+
+      @include breakpoint(md) {
+        gap: 30px;
+      }
+
+      @include breakpoint(sm) {
+        flex-direction: column;
+      }
+
+      @media screen and (max-width: 450px) {
+        gap: 15px;
+      }
+
       &-wrapper {
         display: flex;
         flex-direction: column;
         gap: 50px;
+        justify-content: space-between;
+
+        @include breakpoint(md) {
+          gap: 30px;
+        }
+
+        @media screen and (max-width: 450px) {
+          gap: 15px;
+        }
       }
 
       &-card {
@@ -133,10 +183,37 @@ export default {
         gap: 25px;
         align-items: center;
 
+        @include breakpoint(md) {
+          gap: 15px;
+        }
+
         &--text {
           font-size: 18px;
           line-height: 130%;
-          max-width: 300px;
+          max-width: 250px;
+
+          @include breakpoint(sm) {
+            font-size: 14px;
+          }
+
+          @media screen and (max-width: 400px) {
+            max-width: 170px;
+          }
+        }
+
+        &--img {
+          width: 71px;
+          height: 71px;
+
+          @include breakpoint(md) {
+            width: 60px;
+            height: 60px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }

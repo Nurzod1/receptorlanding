@@ -3,8 +3,9 @@
     <div class="container">
       <div class="navbar-wrapper">
         <div class="navbar-start">
+          <burger-menu :value="value" @input="$emit('input', $event)" />
           <div class="navbar-logo">
-            <img src="../assets/icons/Logo.png" alt="" />
+            <img src="../assets/images/Logo.png" alt="" />
           </div>
         </div>
         <div class="navbar-menu">
@@ -39,10 +40,6 @@
             </svg>
           </div>
         </div>
-
-        <div class="navbar-end">
-          <!-- <router-link class="navbar-login" to="/auth/login">Войти</router-link> -->
-        </div>
       </div>
     </div>
   </div>
@@ -50,15 +47,21 @@
 
 <script>
 import RSearchField from "~/components/navbar/RSearchField";
+import BurgerMenu from "./navbar/BurgerMenu.vue";
 export default {
   name: "MainNavbar",
-  components: { RSearchField },
+  components: { RSearchField, BurgerMenu },
+  props: {
+    value: {
+      type: Boolean,
+      required: true, 
+    }
+  },
   data() {
     return {
-      isExpanded: false,
-      search: "",
-    };
-  },
+      search: ""
+    }
+  }
 };
 </script>
 
@@ -72,12 +75,37 @@ export default {
     justify-content: space-between;
     align-items: center;
     height: 76px;
+
+    @include breakpoint(sm) {
+      height: 60px;
+    }
   }
 
+  &-start {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      gap: 10px;
+    }
+  }
   &-logo {
     width: 180px;
     height: 34px;
-    margin-right: 200px;
+    margin-right: 150px;
+
+    @include breakpoint(lg) {
+      margin-right: 70px;
+      width: 130px;
+      height: 25px;
+    }
+
+    @media screen and (max-width: 400px){      
+      width: 110px;
+      height: 20px;
+      margin-right: 20px;
+    }
 
     img {
       width: 100%;
@@ -90,6 +118,14 @@ export default {
       display: flex;
       gap: 21px;
 
+      @include breakpoint(lg) {
+        gap: 15px;
+      }
+
+      @include breakpoint(md) {
+        display: none;
+      }
+
       &-link {
         font-weight: 400;
         line-height: 19px;
@@ -100,6 +136,10 @@ export default {
         &:hover {
           color: $stroke;
         }
+
+        @include breakpoint(lg) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -108,6 +148,10 @@ export default {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include breakpoint(lg) {
+      gap: 10px;
+    }
 
     &__btn {
       display: flex;
@@ -118,6 +162,10 @@ export default {
       cursor: pointer;
       transition: all 0.3s;
 
+      @include breakpoint(lg) {
+        width: 20px;
+        height: 20px;
+      }
       svg {
         transition: 0.3s;
         path {

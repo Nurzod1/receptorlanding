@@ -92,10 +92,10 @@
             </div>
           </div>
         </div>
-        <div class="subscribe-foot">
-          <img src="../assets/images/SubscripeFoot.jpg" alt="" />
-        </div>
       </div>
+    </div>
+    <div class="subscribe-foot">
+      <img src="../assets/images/SubscripeFoot.jpg" alt="" />
     </div>
   </div>
 </template>
@@ -123,16 +123,49 @@ export default {
   padding: 80px 0;
   background-color: $gray-100;
 
+  @include breakpoint(md) {
+    padding: 45px 0;
+  }
+
+  @include breakpoint(sm) {
+    padding: 35px 0;
+  }
+
+  @include breakpoint(xs) {
+    padding: 20px 0;
+  }
+
   &-head {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     margin-bottom: 100px;
+
+    @include breakpoint(xs) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 340px) {
+      gap: 6px;
+    }
     &__title {
       font-family: Bitter;
       font-size: 36px;
+      font-weight: 500;
       line-height: 130%;
+
+      @include breakpoint(lg) {
+        font-size: 32px;
+      }
+
+      @include breakpoint(md) {
+        font-size: 30px;
+      }
+
+      @include breakpoint(sm) {
+        font-size: 24px;
+      }
     }
 
     &__tooltip {
@@ -150,6 +183,19 @@ export default {
         z-index: 10;
         pointer-events: none;
 
+        @include breakpoint(md) {
+          left: -407px;
+          top: -219%;
+          max-width: 387px;
+        }
+
+        @include breakpoint(xs) {
+          left: -268px;
+          top: -292%;
+          max-width: 253px;
+          padding: 15px 9px 16px 20px;
+        }
+
         &.active {
           opacity: 1;
         }
@@ -158,6 +204,10 @@ export default {
           font-size: 14px;
           line-height: 20px;
           color: $white;
+
+          @include breakpoint(xs) {
+            font-size: 12px;
+          }
         }
         &::after {
           content: " ";
@@ -169,11 +219,29 @@ export default {
           border-style: solid;
           border-color: transparent transparent transparent $gray-750;
           pointer-events: none;
+
+          @include breakpoint(xs) {
+            margin-top: -12px;
+            border-width: 12px;
+          }
         }
       }
 
       &-icon {
         cursor: pointer;
+        width: 28px;
+        height: 28px;
+        padding: 2px;
+
+        @include breakpoint(sm) {
+          width: 26px;
+          height: 26px;
+
+          svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
       }
     }
   }
@@ -182,10 +250,37 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+
+    @media screen and (max-width: 1400px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 150px;
+      justify-items: center;
+    }
+
+    @include breakpoint(md) {
+      column-gap: 20px;
+    }
+
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr;
+      margin-bottom: 60px;
+      gap: 120px;
+    }
+
+    @include breakpoint(xs) {
+      gap: 100px;
+      margin-bottom: 50px;
+    }
     &__item {
       width: 350px;
       height: 350px;
       position: relative;
+
+      @include breakpoint(xs) {
+        width: 250px;
+        height: 250px;
+      }
 
       &-about {
         position: absolute;
@@ -203,14 +298,32 @@ export default {
         text-align: center;
         z-index: 6;
 
+        @include breakpoint(xs) {
+          max-width: 100px;
+          max-height: 100px;
+          gap: 5px;
+          padding: 10px 5px;
+          left: 75px;
+        }
+
         &--img {
           position: relative;
           z-index: 5;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
         &--time {
           font-family: Bitter;
           font-size: 24px;
           line-height: 29px;
+
+          @include breakpoint(xs) {
+            font-size: 16px;
+            line-height: 20px;
+          }
         }
 
         &--line {
@@ -223,6 +336,11 @@ export default {
           font-size: 36px;
           line-height: 43px;
 
+          @include breakpoint(xs) {
+            font-size: 24px;
+            line-height: 28px;
+          }
+
           span {
             font-weight: 600;
           }
@@ -233,10 +351,40 @@ export default {
         top: 261px;
         right: 64px;
         z-index: 1;
+        width: 369px;
+        height: 172px;
+
+        @include breakpoint(xs) {
+          top: 195px;
+          right: 38px;
+          width: 275px;
+          height: 108px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
 
         &.second {
-          top: -175px;
-          left: 175px;
+          top: -131px;
+          left: 202px;
+          width: 244px;
+          height: 246px;
+
+          @include breakpoint(xs) {
+            top: -101px;
+            left: 142px;
+            width: 172px;
+            height: 190px;
+          }
+
+          @media screen and (max-width: 390px) {
+            top: -86px;
+            left: 139px;
+            width: 143px;
+            height: 162px;
+          }
         }
       }
     }
@@ -252,11 +400,20 @@ export default {
     color: $black;
     border: none;
     z-index: 6;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    }
+
+    @include breakpoint(xs) {
+      top: 227px;
+      left: 74px;
+    }
   }
 
   &-foot {
     width: 100%;
-    height: 400px;
+    // height: 400px;
 
     img {
       width: 100%;
