@@ -7,10 +7,7 @@
           <div class="menu-head__title">Наше меню поможет вам:</div>
         </div>
         <VueSlickCarousel v-bind="settings" :arrows="true">
-          <review-card />
-          <review-card />
-          <review-card />
-          <review-card />
+          <review-card v-for="item in cardsrc" :key="item.id" :post="item" />
         </VueSlickCarousel>
       </div>
     </div>
@@ -66,6 +63,44 @@ export default {
           },
         ],
       },
+      cardsrc: [
+        {
+          img: require("~/assets/images/ReviewCardImg.png"),
+          name: "Мария",
+          text: `Не могу сказать, что стою у плиты целыми днями, но присутствую. Идеи
+          очень часто беру на сайте кулинарных рецептов Рецептор, который для
+          меня заменил настольную книгу по кулинарии.`,
+          date: "8.05.2022",
+          id: 1,
+        },
+        {
+          img: require("~/assets/images/ReviewCardImg1.png"),
+          name: "Анна",
+          text: `Если я не знаю, что приготовить или подзабыла рецепт, я всегда знаю куда 
+          мне посмотреть. За столько времени посещения этого сайта, я уже помню в каком рецепте, 
+          есть нюанс, который меня интересует.`,
+          date: "10.05.2022",
+          id: 2,
+        },
+        {
+          img: require("~/assets/images/ReviewCardImg.png"),
+          name: "Мария",
+          text: `Не могу сказать, что стою у плиты целыми днями, но присутствую. Идеи
+          очень часто беру на сайте кулинарных рецептов Рецептор, который для
+          меня заменил настольную книгу по кулинарии.`,
+          date: "8.05.2022",
+          id: 3,
+        },
+        {
+          img: require("~/assets/images/ReviewCardImg1.png"),
+          name: "Анна",
+          text: `Если я не знаю, что приготовить или подзабыла рецепт, я всегда знаю куда 
+          мне посмотреть. За столько времени посещения этого сайта, я уже помню в каком рецепте, 
+          есть нюанс, который меня интересует.`,
+          date: "10.05.2022",
+          id: 4,
+        },
+      ],
     };
   },
 };
@@ -109,7 +144,7 @@ export default {
         max-width: 750px;
         min-height: 360px;
       }
-      @media screen and (max-width: 767px) {
+      @include breakpoint(sm) {
         max-width: 550px;
         min-height: 360px;
       }

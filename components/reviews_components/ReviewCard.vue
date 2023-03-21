@@ -3,10 +3,10 @@
     <div class="card-main">
       <div class="card-head">
         <div class="card-head__img">
-          <img src="~/assets/images/ReviewCardImg.png" alt="" />
+          <img :src="post.img" alt="" />
         </div>
         <div class="card-head__about">
-          <p class="card-head__about--name">Мария</p>
+          <p class="card-head__about--name">{{ post.name }}</p>
           <div class="card-head__about--grade">
             <svg
               width="91"
@@ -40,15 +40,12 @@
         </div>
       </div>
       <div class="card-text">
-        <p>
-          Не могу сказать, что стою у плиты целыми днями, но присутствую. Идеи
-          очень часто беру на сайте кулинарных рецептов Рецептор, который для
-          меня заменил настольную книгу по кулинарии.
+        <p>{{ post.text }}
         </p>
       </div>
     </div>
     <div class="card-date">
-      <p>8.05.2022</p>
+      <p>{{ post.date }}</p>
     </div>
   </div>
 </template>
@@ -56,6 +53,12 @@
 <script>
 export default {
   name: "ReviewCard",
+  props: {
+    post: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -76,10 +79,7 @@ export default {
   @include breakpoint(sm) {
     max-width: 250px;
   }
-
-  &-main {
-  }
-
+  
   &-head {
     display: flex;
     align-items: center;
