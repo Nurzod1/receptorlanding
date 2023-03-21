@@ -86,6 +86,10 @@ export default {
   color: $white;
   padding: 20px;
 
+  p{
+    color: $white !important;
+  }
+
   &-wrapper {
     display: flex;
     flex-direction: column;

@@ -5,8 +5,15 @@
   margin: 0;
   padding: 0;
 }
-body , input{
+
+body,
+input,
+span {
   font-family: Raleway;
+  color: $main;
+}
+
+p {
   color: $main;
 }
 

@@ -74,10 +74,11 @@
 
 <script>
 import GButton from "./GButton.vue";
-import QuestionCard from "~/components/q_components/QuestionCard.vue";
-import Accordion from "./accordion/Accordion.vue";
+import QuestionCard from "~/components/question_components/QuestionCard.vue";
+import Accordion from "~/components/question_components/Accordion.vue";
+import AccordionItem from "~/components/question_components/AccordionItem.vue";
 export default {
-  components: { GButton, QuestionCard, Accordion },
+  components: { GButton, QuestionCard, Accordion, AccordionItem },
   name: "Question",
   data() {
     return {

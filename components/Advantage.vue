@@ -223,7 +223,7 @@ export default {
 
     &__button {
       @media screen and (max-width: 520px) {
-        width: 100%;
+        width: 70%;
       }
     }
   }

@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import RSearchField from "~/components/navbar/RSearchField";
-import BurgerMenu from "./navbar/BurgerMenu.vue";
+import RSearchField from "~/components/navbar_components/RSearchField";
+import BurgerMenu from "~/components/navbar_components/BurgerMenu.vue";
 export default {
   name: "MainNavbar",
   components: { RSearchField, BurgerMenu },

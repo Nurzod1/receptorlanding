@@ -83,6 +83,9 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  p{
+    color: $white !important;
+  }
   background-color: $main;
   padding: 38px 0;
   color: $white;

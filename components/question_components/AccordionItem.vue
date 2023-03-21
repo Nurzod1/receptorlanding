@@ -90,7 +90,7 @@ export default {
     border-radius: 10px;
     background-color: $white;
     color: $black;
-    max-width: 800px;
+    max-width: 720px;
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;
@@ -107,6 +107,7 @@ export default {
     font-size: 16px;
     line-height: 110%;
     margin-top: 9px;
+    max-width: 720px;
 
     @include breakpoint(xs) {
       font-size: 14px;
@@ -116,10 +117,14 @@ export default {
     background-color: $white;
     border-radius: 10px;
     margin-bottom: 16px;
+    min-width: 950px;
     max-width: 950px;
     transition: 0.3s;
     padding: 15px 20px;
 
+    @include breakpoint(lg) {
+      min-width: 0;
+    }
     @include breakpoint(xs) {
       padding: 10px 15px;
     }
