@@ -4,7 +4,7 @@
       <div class="review-wrapper">
         <div class="menu-head">
           <div class="menu-head__line"></div>
-          <div class="menu-head__title">Наше меню поможет вам:</div>
+          <div class="menu-head__title">Отзывы</div>
         </div>
         <VueSlickCarousel v-bind="settings" :arrows="true">
           <review-card v-for="item in cardsrc" :key="item.id" :post="item" />
