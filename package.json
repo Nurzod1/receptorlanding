@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -11,6 +11,7 @@
   "dependencies": {
     "@mdi/font": "^7.1.96",
     "core-js": "^3.25.3",
+    "cross-env": "^7.0.3",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
